@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "309853513013",
+    "firebase_url": "https://apka-283409.firebaseio.com",
+    "project_id": "apka-283409",
+    "storage_bucket": "apka-283409.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309853513013:android:bf46043c98cf7cea56987c",
+        "android_client_info": {
+          "package_name": "comapp.teamvision.apka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309853513013-km89kgolme90l4jvu87s6rm1anlhif1m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "comapp.teamvision.apka",
+            "certificate_hash": "ad4bd3fd1e2dbab8d6984a1aa04409cea960ae81"
+          }
+        },
+        {
+          "client_id": "309853513013-ckj5l3v0fu1fjpa353ec3cgcqqs1gpn1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "comapp.teamvision.apka",
+            "certificate_hash": "4922d9491c45af15af92e638f891d012b453e3d5"
+          }
+        },
+        {
+          "client_id": "309853513013-51dnnkmtffbjlgvso81jgq64ob8ltfnf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9akvFKZiwL0oxO3Va5POLbHYBfFDjx8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309853513013-51dnnkmtffbjlgvso81jgq64ob8ltfnf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
