@@ -1,4 +1,5 @@
 import 'package:apka/authentication/sign_in.dart';
+import 'package:apka/screens/trip_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -155,11 +156,13 @@ class _FlightDetailsState extends State<FlightDetails> {
               padding: const EdgeInsets.only(top:20.0),
               child: RaisedButton(
                 padding: EdgeInsets.only(left: 38,right: 38,top: 18,bottom: 18),
-                color: Hexcolor('#050F32').withOpacity(0.90),
+                color: Hexcolor('#152971'),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),
                 ),
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => TripDetails()));
+                },
                 child: Text("Confirm",style: TextStyle(color: Colors.white,fontSize: 24.0,),),
               ),
             ),

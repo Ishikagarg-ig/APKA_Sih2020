@@ -1,5 +1,6 @@
 import 'package:apka/authentication/sign_in.dart';
 import 'package:apka/component/calender.dart';
+import 'package:apka/screens/flight_details.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
@@ -91,35 +92,40 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(top:50.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width*0.9,
-                height: MediaQuery.of(context).size.height*0.25,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15.0),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color.fromRGBO(0, 0, 0, 0.25),
-                      blurRadius: 4,
-                      spreadRadius: 3,
-                      offset: Offset(-5,5),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 23),
-                      child: Image.asset('assets/images/already_book.png',height:94,width: 189,),
-                    ),
-                    Text("Already Booked ticket",
-                      style: TextStyle(
-                        fontSize: 30.0,
-                        color: Hexcolor('#050F32'),
-                      ),),
-                  ],
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => FlightDetails()));
+              },
+              child: Padding(
+                padding: EdgeInsets.only(top:50.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width*0.9,
+                  height: MediaQuery.of(context).size.height*0.25,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromRGBO(0, 0, 0, 0.25),
+                        blurRadius: 4,
+                        spreadRadius: 3,
+                        offset: Offset(-5,5),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 23),
+                        child: Image.asset('assets/images/already_book.png',height:94,width: 189,),
+                      ),
+                      Text("Already Booked ticket",
+                        style: TextStyle(
+                          fontSize: 30.0,
+                          color: Hexcolor('#050F32'),
+                        ),),
+                    ],
+                  ),
                 ),
               ),
             ),
