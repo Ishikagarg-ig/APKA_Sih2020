@@ -41,7 +41,7 @@ class _AppStartState extends State<AppStart> {
   Widget build(BuildContext context) {
     return Simple_splashscreen(
       context: context,
-       gotoWidget: HomePage(),
+      gotoWidget: HomePage(),
 //      gotoWidget: username == null ? ImageSliderDemo() :
 //      (varify!=null)?(varify2!=null)?HomePage():WelcomePage():AccountPage(),
      // gotoWidget: ImageSliderDemo(),

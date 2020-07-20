@@ -1,3 +1,4 @@
+import 'package:apka/screens/autobooking_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -21,7 +22,9 @@ class DialogBox{
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => AutoBookingScreen()));
+                    },
                     child: Text("Auto Booking",style: TextStyle(color: Colors.white,fontSize: 20.0,),),
                   ),
                   RaisedButton(

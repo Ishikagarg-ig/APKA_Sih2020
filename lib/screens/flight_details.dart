@@ -1,5 +1,6 @@
 import 'package:apka/authentication/sign_in.dart';
 import 'package:apka/screens/trip_details.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -90,6 +91,7 @@ class _FlightDetailsState extends State<FlightDetails> {
               child: Padding(
                 padding: const EdgeInsets.only(top:38.0,left: 16.0,right: 16.0),
                 child: TextField(
+                  keyboardType: TextInputType.number,
                   controller: pnrTextEditingController,
                   style: TextStyle(
                     fontSize: 27.0,
