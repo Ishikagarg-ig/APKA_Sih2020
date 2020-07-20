@@ -1,4 +1,5 @@
 import 'package:apka/authentication/sign_in.dart';
+import 'package:apka/widgets/dialogBox.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -15,6 +16,7 @@ class _AutoBookingScreenState extends State<AutoBookingScreen> {
 
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   TextEditingController passengersTextEditingController = TextEditingController();
+  DialogBox dialogBox = new DialogBox();
 
   @override
   void initState() {
@@ -343,6 +345,7 @@ class _AutoBookingScreenState extends State<AutoBookingScreen> {
                                   borderRadius: BorderRadius.circular(100.0)
                                 ),
                                 onPressed: (){
+                                  dialogBox.congratulationsBox(context);
                                 },
                                 child: Text("Yes",style: TextStyle(color: Colors.white,fontSize: 24.0,),),
                               ),
