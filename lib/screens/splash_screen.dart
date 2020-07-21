@@ -1,4 +1,5 @@
 import 'package:apka/screens/account%20_page.dart';
+import 'package:apka/screens/coronaCases_page.dart';
 import 'package:apka/screens/flight_details.dart';
 import 'package:apka/screens/hompage.dart';
 import 'package:apka/screens/welcome_page.dart';

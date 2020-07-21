@@ -14,6 +14,8 @@ class AutoBookingScreen extends StatefulWidget {
 
 class _AutoBookingScreenState extends State<AutoBookingScreen> {
 
+  bool _visible = false;
+  bool _visible1 = false;
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   TextEditingController passengersTextEditingController = TextEditingController();
   DialogBox dialogBox = new DialogBox();
@@ -91,278 +93,320 @@ class _AutoBookingScreenState extends State<AutoBookingScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Container(
-                          height: 163,
-                          width: 149,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15.0),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Color.fromRGBO(0, 0, 0, 0.25),
-                                blurRadius: 4,
-                                spreadRadius: 3,
-                                offset: Offset(10,10),
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left:50.0, right: 50.0),
-                                child: Icon(Icons.local_taxi,size: 50.0,),
-                              ),
-                              Text("Taxi",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 38.0),),
-                            ],
+                        GestureDetector(
+                          onTap:(){
+                            setState(() {
+                              _visible=true;
+                            });
+                          },
+                          child: Container(
+                            height: 163,
+                            width: 149,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15.0),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Color.fromRGBO(0, 0, 0, 0.25),
+                                  blurRadius: 4,
+                                  spreadRadius: 3,
+                                  offset: Offset(10,10),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left:50.0, right: 50.0),
+                                  child: Icon(Icons.local_taxi,size: 50.0,),
+                                ),
+                                Text("Taxi",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 38.0),),
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(
                           width: 20.0,
                         ),
-                        Container(
-                          height: 163,
-                          width: 149,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15.0),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Color.fromRGBO(0, 0, 0, 0.25),
-                                blurRadius: 4,
-                                spreadRadius: 3,
-                                offset: Offset(10,10),
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left:50.0, right: 50.0),
-                                child: Icon(Icons.directions_bus,size: 50.0,),
-                              ),
-                              Text("Bus",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 38.0),),
-                            ],
+                        GestureDetector(
+                          onTap:(){
+                            setState(() {
+                              _visible=true;
+                            });
+                          },
+                          child: Container(
+                            height: 163,
+                            width: 149,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15.0),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Color.fromRGBO(0, 0, 0, 0.25),
+                                  blurRadius: 4,
+                                  spreadRadius: 3,
+                                  offset: Offset(10,10),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left:50.0, right: 50.0),
+                                  child: Icon(Icons.directions_bus,size: 50.0,),
+                                ),
+                                Text("Bus",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 38.0),),
+                              ],
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top:20.0),
-                  child: Container(
-                    height: 45.0,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("Total Passengers: ",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 30.0),),
-                        Container(
-                          width: 60.0,
-                          foregroundDecoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0),
-                            border: Border.all(
-                              color: Colors.blueGrey,
-                              width: 2.0,
-                            ),
-                          ),
-                          child: Row(
-                            children: <Widget>[
-                              Expanded(
-                                flex: 1,
-                                child: TextFormField(
-                                  textAlign: TextAlign.center,
-                                  decoration: InputDecoration(
-                                    contentPadding: EdgeInsets.all(8.0),
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(5.0),
-                                    ),
-                                  ),
-                                  controller: passengersTextEditingController,
-                                  keyboardType: TextInputType.numberWithOptions(
-                                    decimal: false,
-                                    signed: true,
-                                  ),
-                                  inputFormatters: <TextInputFormatter>[
-                                    WhitelistingTextInputFormatter.digitsOnly
-                                  ],
-                                ),
+                AnimatedOpacity(
+                  opacity: _visible ? 1.0 : 0.0,
+                  duration: Duration(milliseconds: 500),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top:20.0),
+                    child: Container(
+                      height: 45.0,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Total Passengers: ",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 30.0),),
+                          Container(
+                            width: 60.0,
+                            foregroundDecoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5.0),
+                              border: Border.all(
+                                color: Colors.blueGrey,
+                                width: 2.0,
                               ),
-                              Container(
-                                height: 38.0,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        border: Border(
-                                          bottom: BorderSide(
-                                            width: 0.5,
+                            ),
+                            child: Row(
+                              children: <Widget>[
+                                Expanded(
+                                  flex: 1,
+                                  child: TextFormField(
+                                    textAlign: TextAlign.center,
+                                    decoration: InputDecoration(
+                                      contentPadding: EdgeInsets.all(8.0),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(5.0),
+                                      ),
+                                    ),
+                                    controller: passengersTextEditingController,
+                                    keyboardType: TextInputType.numberWithOptions(
+                                      decimal: false,
+                                      signed: true,
+                                    ),
+                                    inputFormatters: <TextInputFormatter>[
+                                      WhitelistingTextInputFormatter.digitsOnly
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 38.0,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border(
+                                            bottom: BorderSide(
+                                              width: 0.5,
+                                            ),
                                           ),
                                         ),
+                                        child: InkWell(
+                                          child: Icon(
+                                            Icons.arrow_drop_up,
+                                            size: 18.0,
+                                          ),
+                                          onTap: () {
+                                            int currentValue = int.parse(passengersTextEditingController.text);
+                                            setState(() {
+                                              currentValue++;
+                                              passengersTextEditingController.text = (currentValue)
+                                                  .toString(); // incrementing value
+                                            });
+                                          },
+                                        ),
                                       ),
-                                      child: InkWell(
+                                      InkWell(
                                         child: Icon(
-                                          Icons.arrow_drop_up,
+                                          Icons.arrow_drop_down,
                                           size: 18.0,
                                         ),
                                         onTap: () {
                                           int currentValue = int.parse(passengersTextEditingController.text);
                                           setState(() {
-                                            currentValue++;
-                                            passengersTextEditingController.text = (currentValue)
-                                                .toString(); // incrementing value
+                                            print("Setting state");
+                                            currentValue--;
+                                            passengersTextEditingController.text =
+                                                (currentValue > 0 ? currentValue : 0)
+                                                    .toString(); // decrementing value
                                           });
                                         },
                                       ),
-                                    ),
-                                    InkWell(
-                                      child: Icon(
-                                        Icons.arrow_drop_down,
-                                        size: 18.0,
-                                      ),
-                                      onTap: () {
-                                        int currentValue = int.parse(passengersTextEditingController.text);
-                                        setState(() {
-                                          print("Setting state");
-                                          currentValue--;
-                                          passengersTextEditingController.text =
-                                              (currentValue > 0 ? currentValue : 0)
-                                                  .toString(); // decrementing value
-                                        });
-                                      },
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top:35.0),
-                  child: Container(
-                    child: Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(bottom: 20.0),
-                          decoration: BoxDecoration(
-                            border: Border(
-                              bottom: BorderSide(
-                                color: Hexcolor('#736666'),
-                                width: 3.0,
+                AnimatedOpacity(
+                  opacity: _visible ? 1.0 : 0.0,
+                  duration: Duration(milliseconds: 500),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top:10.0),
+                    child: RaisedButton(
+                      padding: EdgeInsets.only(left: 28,right: 28,top: 9,bottom: 9),
+                      color: Hexcolor('#C4C4C4'),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                      onPressed: (){
+                        setState(() {
+                          _visible1=true;
+                        });
+                      },
+                      child: Text("next",style: TextStyle(color: Colors.black,fontSize: 24.0,),),
+                    ),
+                  ),
+                ),
+                AnimatedOpacity(
+                  opacity: _visible1 ? 1.0 : 0.0,
+                  duration: Duration(milliseconds: 500),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top:35.0),
+                    child: Container(
+                      child: Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(bottom: 20.0),
+                            decoration: BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(
+                                  color: Hexcolor('#736666'),
+                                  width: 3.0,
+                                ),
                               ),
                             ),
+                              child: Text("Best Plan for you",style: TextStyle(fontSize: 35.0,color: Hexcolor('#152971'),),),
                           ),
-                            child: Text("Best Plan for you",style: TextStyle(fontSize: 35.0,color: Hexcolor('#152971'),),),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top:20.0),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(bottom:20.0,left: 21),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Icon(Icons.location_on,size: 30,),
-                                    SizedBox(
-                                      width: 4.0,
-                                    ),
-                                    Text("sector9 - airport(tml3)",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 32.0),),
-                                  ],
+                          Padding(
+                            padding: const EdgeInsets.only(top:20.0),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom:20.0,left: 21),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(Icons.location_on,size: 30,),
+                                      SizedBox(
+                                        width: 4.0,
+                                      ),
+                                      Text("sector9 - airport(tml3)",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 32.0),),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(bottom:20.0,left: 21),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Icon(Icons.access_time,size: 30,),
-                                    SizedBox(
-                                      width: 4.0,
-                                    ),
-                                    Text("Taxi Time - 6:30 am",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 32.0),),
-                                  ],
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom:20.0,left: 21),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(Icons.access_time,size: 30,),
+                                      SizedBox(
+                                        width: 4.0,
+                                      ),
+                                      Text("Taxi Time - 6:30 am",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 32.0),),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(bottom:20.0,left: 21),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Icon(Icons.date_range,size: 30,),
-                                    SizedBox(
-                                      width: 4.0,
-                                    ),
-                                    Text("Date - 16July20",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 32.0),),
-                                  ],
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom:20.0,left: 21),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(Icons.date_range,size: 30,),
+                                      SizedBox(
+                                        width: 4.0,
+                                      ),
+                                      Text("Date - 16July20",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 32.0),),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(bottom:20.0,left: 21),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Icon(Icons.directions,size: 30,),
-                                    SizedBox(
-                                      width: 4.0,
-                                    ),
-                                    Text("Distance - 14.5 km",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 32.0),),
-                                  ],
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom:20.0,left: 21),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(Icons.directions,size: 30,),
+                                      SizedBox(
+                                        width: 4.0,
+                                      ),
+                                      Text("Distance - 14.5 km",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 32.0),),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(bottom:20.0,left: 21),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Icon(Icons.traffic,size: 30,),
-                                    SizedBox(
-                                      width: 4.0,
-                                    ),
-                                    Text("Traffic - Slow",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 32.0),),
-                                  ],
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom:20.0,left: 21),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(Icons.traffic,size: 30,),
+                                      SizedBox(
+                                        width: 4.0,
+                                      ),
+                                      Text("Traffic - Slow",style: TextStyle(color: Hexcolor('#050F32'),fontSize: 32.0),),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom:20.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              RaisedButton(
-                                padding: EdgeInsets.only(left: 38,right: 38,top: 18,bottom: 18),
-                                color: Hexcolor('#152971'),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(100.0)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom:20.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                RaisedButton(
+                                  padding: EdgeInsets.only(left: 38,right: 38,top: 18,bottom: 18),
+                                  color: Hexcolor('#152971'),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(100.0)
+                                  ),
+                                  onPressed: (){
+                                    dialogBox.congratulationsBox(context);
+                                  },
+                                  child: Text("Yes",style: TextStyle(color: Colors.white,fontSize: 24.0,),),
                                 ),
-                                onPressed: (){
-                                  dialogBox.congratulationsBox(context);
-                                },
-                                child: Text("Yes",style: TextStyle(color: Colors.white,fontSize: 24.0,),),
-                              ),
-                              RaisedButton(
-                                padding: EdgeInsets.only(left: 38,right: 38,top: 18,bottom: 18),
-                                color: Hexcolor('#152971'),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(100.0),
+                                RaisedButton(
+                                  padding: EdgeInsets.only(left: 38,right: 38,top: 18,bottom: 18),
+                                  color: Hexcolor('#152971'),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(100.0),
+                                  ),
+                                  onPressed: (){
+                                  },
+                                  child: Text("No",style: TextStyle(color: Colors.white,fontSize: 24.0,),),
                                 ),
-                                onPressed: (){
-                                },
-                                child: Text("No",style: TextStyle(color: Colors.white,fontSize: 24.0,),),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
