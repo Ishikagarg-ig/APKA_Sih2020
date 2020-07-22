@@ -71,6 +71,7 @@ class _FlightDetailsState extends State<FlightDetails> {
               ),
             ),
           ),
+          
           Padding(
             padding: EdgeInsets.only(top:10.0),
             child: Container(
@@ -102,6 +103,7 @@ class _FlightDetailsState extends State<FlightDetails> {
                     hintStyle: TextStyle(
                       fontSize: 20.0,
                     ),
+
                     suffixIcon: IconButton(
                       icon: Icon(Icons.arrow_forward),
                       color: Hexcolor('#050F32'),
