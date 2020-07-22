@@ -6,6 +6,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'select_your_plan.dart';
 
 class AutoBookingScreen extends StatefulWidget {
   @override
@@ -399,6 +400,7 @@ class _AutoBookingScreenState extends State<AutoBookingScreen> {
                                     borderRadius: BorderRadius.circular(100.0),
                                   ),
                                   onPressed: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => selectyourPlan()));
                                   },
                                   child: Text("No",style: TextStyle(color: Colors.white,fontSize: 24.0,),),
                                 ),
