@@ -19,14 +19,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-  DateTime now;
-  DateTime start;
-  var end;
-  var runningdate;
-  String startDate;
-  String endDate;
-  var runningdate1;
-  String now1;
+
 
   void initState() {
     // TODO: implement initState
@@ -172,7 +165,7 @@ class _HomePageState extends State<HomePage> {
                     fit: BoxFit.cover,
                   )),
 
-              accountName: Text("Hello, Anuj"
+              accountName: Text("Hello"
                 //((_user.fullName != null) ? _user.fullName : "...")
               ),
 

@@ -30,8 +30,6 @@ class _AppStartState extends State<AppStart> {
   getUser() async {
     FlutterSecureStorage storage = await FlutterSecureStorage();
     username = await storage.read(key: 'username');
-    check= await storage.read(key: 'check');
-    varify= await storage.read(key: 'varify');
     varify2=await storage.read(key: 'varify2');
     //print(username+varify+varify2);
   }
@@ -42,10 +40,7 @@ class _AppStartState extends State<AppStart> {
   Widget build(BuildContext context) {
     return Simple_splashscreen(
       context: context,
-      gotoWidget: HomePage(),
-//      gotoWidget: username == null ? ImageSliderDemo() :
-//      (varify!=null)?(varify2!=null)?HomePage():WelcomePage():AccountPage(),
-     // gotoWidget: ImageSliderDemo(),
+      gotoWidget: varify2==null ? ImageSliderDemo() : HomePage(),
 
       splashscreenWidget: SplashScreen(),
       timerInSeconds: 4,
@@ -81,7 +76,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     GoogleFonts.sen(fontSize: 48, fontWeight: FontWeight.bold),
               ),
               Text(
-                "Now Travel made easier",
+                "Airline Passenger Kit App",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.sen(
                   fontSize: 18,

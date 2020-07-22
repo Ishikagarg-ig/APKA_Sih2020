@@ -16,19 +16,19 @@ class WelcomePage extends StatefulWidget {
 class _WelcomePageState extends State<WelcomePage> {
   List<ScrollableContainer> imgList = [
     ScrollableContainer(
-      image: "assets/sit.png",
-      smallText: " It is something you do everyday \ne.g Brushing your theeth",
-      largeText: "Identify Your " "Anchor Habit" "",
+      image: "assets/c23.png",
+      smallText: " Now you can plan and Track",
+      largeText: "Track progress of journey",
     ),
     ScrollableContainer(
-      image: "assets/schedule.png",
-      smallText: "It will serve as a sweet reminder",
-      largeText: "Fix meditation to your ''Anchor Habit''",
+      image: "assets/c21.png",
+      smallText: "There will be perfect Reminder for you",
+      largeText: "You can be punchtual for travell",
     ),
     ScrollableContainer(
-      image: "assets/time.png",
-      smallText: "With our curated bite size content & gamified experiences ",
-      largeText: "We will help u stay consistent",
+      image: "assets/c22.png",
+      smallText: "You can monitor your environment ",
+      largeText: "You will be safe During Travell",
     ),
   ];
   var _current = 0;
@@ -51,13 +51,13 @@ class _WelcomePageState extends State<WelcomePage> {
 //              height: MediaQuery.of(context).size.height * 0.1,
 //              child: Row(
 //                children: <Widget>[
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.08,
-                  ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.08,
+            ),
 //                  Image.asset("assets/gift1.png"),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.65,
-                  ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.65,
+            ),
 //                  Image.asset("assets/notification1.png"),
 //                ],
 //              ),
@@ -68,7 +68,7 @@ class _WelcomePageState extends State<WelcomePage> {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.756,
               child: Text(
-                "Helllo Paul,",
+                "Helllo ,",
                 textAlign: TextAlign.start,
                 style: GoogleFonts.sen(
                   fontSize: 16,
@@ -103,7 +103,7 @@ class _WelcomePageState extends State<WelcomePage> {
               items: imgList
                   .map(
                     (item) => item,
-                  )
+              )
                   .toList(),
             ),
             Row(
@@ -135,18 +135,18 @@ class _WelcomePageState extends State<WelcomePage> {
               height: MediaQuery.of(context).size.height * 0.08,
               width: MediaQuery.of(context).size.width * 0.86,
               radius: 30,
-              onpress: () {
+              onpress: () async{
 
-                      final storage = new FlutterSecureStorage();
-                      storage.write(key: "varify2", value: 'done');
-                      //Navigator.of(context).pop();
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return HomePage();
-                          },
-                        ),
-                      );
+                final storage = new FlutterSecureStorage();
+                await storage.write(key: "varify2", value: 'done');
+                //Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return HomePage();
+                    },
+                  ),
+                );
               },
             )
           ],

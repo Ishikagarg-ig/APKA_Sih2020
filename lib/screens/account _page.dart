@@ -50,12 +50,12 @@ class _AccountPageState extends State<AccountPage> {
     };
 
     await FirebaseAuth.instance.verifyPhoneNumber(
-        phoneNumber: this.phoneNo,
-        timeout: const Duration(seconds: 5),
-        verificationCompleted: verifiedSuccess,
-        verificationFailed: verifiedfailed,
-        codeSent: smsCodeSent,
-        codeAutoRetrievalTimeout: autoRetrieve,
+      phoneNumber: this.phoneNo,
+      timeout: const Duration(seconds: 5),
+      verificationCompleted: verifiedSuccess,
+      verificationFailed: verifiedfailed,
+      codeSent: smsCodeSent,
+      codeAutoRetrievalTimeout: autoRetrieve,
     );
   }
 
@@ -149,18 +149,18 @@ class _AccountPageState extends State<AccountPage> {
                         alignment: Alignment.topCenter,
                         child: Padding(
                           padding:
-                              const EdgeInsets.only(left: 22.0, right: 22.0),
+                          const EdgeInsets.only(left: 22.0, right: 22.0),
                           child: ListView(
                             scrollDirection: Axis.vertical,
                             children: <Widget>[
                               SizedBox(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.06,
+                                MediaQuery.of(context).size.height * 0.06,
                               ),
                               Container(
                                 alignment: Alignment.topLeft,
                                 child: Text(
-                                  "Your Name",
+                                  "Name",
                                   style: GoogleFonts.sen(
                                     fontSize: 16,
                                     color: Color(0xff3E3E3E),
@@ -168,15 +168,18 @@ class _AccountPageState extends State<AccountPage> {
                                 ),
                               ),
                               TextInput1(
-                                inputchild: Text(
-                                 widget.user.displayName,
-                                  style: GoogleFonts.sen(
-                                      fontSize: 25,
-                                      color: Color(0xff3E3E3E),
-                                      fontWeight: FontWeight.bold),
+                                inputchild: Padding(
+                                  padding: const EdgeInsets.all(14.0),
+                                  child: Text(
+                                    widget.user.displayName,
+                                    style: GoogleFonts.lato(
+                                        fontSize: 20,
+                                        color: Color(0xff3E3E3E),
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ),
                                 height:
-                                    MediaQuery.of(context).size.height * 0.07,
+                                MediaQuery.of(context).size.height * 0.07,
                                 width: MediaQuery.of(context).size.width * 0.88,
                                 radius: 10,
                               ),
@@ -189,6 +192,36 @@ class _AccountPageState extends State<AccountPage> {
                                     color: Colors.blue,
                                   ),
                                 ),
+                              ),
+                              SizedBox(
+                                height:
+                                MediaQuery.of(context).size.height * 0.06,
+                              ),
+                              Container(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  "Email",
+                                  style: GoogleFonts.sen(
+                                    fontSize: 16,
+                                    color: Color(0xff3E3E3E),
+                                  ),
+                                ),
+                              ),
+                              TextInput1(
+                                inputchild: Padding(
+                                  padding: const EdgeInsets.all(14.0),
+                                  child: Text(
+                                    widget.user.email,
+                                    style: GoogleFonts.lato(
+                                        fontSize: 20,
+                                        color: Color(0xff3E3E3E),
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                height:
+                                MediaQuery.of(context).size.height * 0.07,
+                                width: MediaQuery.of(context).size.width * 0.88,
+                                radius: 10,
                               ),
                               SizedBox(
                                   height: MediaQuery.of(context).size.height *
@@ -215,40 +248,44 @@ class _AccountPageState extends State<AccountPage> {
 //                                    ),
 //                                  ],
                                 ),
-                                child: TextInput1(
-                                  inputchild: Row(
-                                    children: <Widget>[
-                                      SizedBox(
-                                        width: MediaQuery.of(context).size.width* 0.08,
-                                        // width: MediaQuery.of(context).size.width * 0.3,
-                                      ),
-                                      Icon(Icons.phone_android,color: Colors.blueAccent,),
-                                      SizedBox(
-                                        width: MediaQuery.of(context).size.width* 0.04,
-                                        // width: MediaQuery.of(context).size.width * 0.3,
-                                      ),
-                                      Container(
-                                        width: MediaQuery.of(context).size.width * 0.50,
-                                        height: MediaQuery.of(context).size.height * 0.075,
-                                        child: Padding(
-                                          padding: const EdgeInsets.only(top:3.0),
-                                          child: TextField(
-                                            keyboardType: TextInputType.number,
-                                            textAlign: TextAlign.start,
-                                            decoration: InputDecoration(
-                                                border: InputBorder.none,
-                                                hintText: '+91'),
-                                            onChanged: (value) {
-                                              this.phoneNo = "+91"+value;
-                                            },
+                                child: Container(
+                                  color: Colors.white70,
+                                  child: TextInput1(
+                                    inputchild: Row(
+                                      children: <Widget>[
+                                        SizedBox(
+                                          width: MediaQuery.of(context).size.width* 0.08,
+                                          // width: MediaQuery.of(context).size.width * 0.3,
+                                        ),
+                                        Icon(Icons.phone_android,color: Colors.blueAccent,),
+                                        SizedBox(
+                                          width: MediaQuery.of(context).size.width* 0.04,
+                                          // width: MediaQuery.of(context).size.width * 0.3,
+                                        ),
+                                        Container(
+
+                                          width: MediaQuery.of(context).size.width * 0.50,
+                                          height: MediaQuery.of(context).size.height * 0.075,
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(top:3.0),
+                                            child: TextField(
+                                              keyboardType: TextInputType.number,
+                                              textAlign: TextAlign.start,
+                                              decoration: InputDecoration(
+                                                  border: InputBorder.none,
+                                                  hintText: '+91'),
+                                              onChanged: (value) {
+                                                this.phoneNo = "+91"+value;
+                                              },
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
+                                    height: MediaQuery.of(context).size.height * 0.07,
+                                    width: MediaQuery.of(context).size.width * 0.88,
+                                    radius: 30,
                                   ),
-                                  height: MediaQuery.of(context).size.height * 0.07,
-                                  width: MediaQuery.of(context).size.width * 0.88,
-                                  radius: 30,
                                 ),
                               ),
                               SizedBox(
@@ -265,12 +302,12 @@ class _AccountPageState extends State<AccountPage> {
                                   ),
                                 ),
                                 height:
-                                    MediaQuery.of(context).size.height * 0.08,
+                                MediaQuery.of(context).size.height * 0.08,
                                 width: MediaQuery.of(context).size.width * 0.80,
                                 radius: 50,
                                 onpress: () async {
                                   //userAttributes["gameTime"]=gameTime;
-                                //  userAttributes["meditationRegularity"]=meditationRegularity;
+                                  //  userAttributes["meditationRegularity"]=meditationRegularity;
                                   print(userAttributes);
                                   //dbs.historyWithMeditation(userAttributes);
                                   //await _updateData(userAttributes);
@@ -289,7 +326,7 @@ class _AccountPageState extends State<AccountPage> {
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.sen(
                                   fontSize:
-                                      MediaQuery.of(context).size.width / 30,
+                                  MediaQuery.of(context).size.width / 30,
                                 ),
                               ),
                             ],
@@ -333,7 +370,7 @@ class _AccountPageState extends State<AccountPage> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return LoadingPoster();
+                            return WelcomePage();
                           },
                         ),
                       );
