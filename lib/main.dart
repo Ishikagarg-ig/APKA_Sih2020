@@ -1,3 +1,4 @@
+import 'package:apka/screens/firstPage.dart';
 import 'package:apka/testing/FoodNotifier.dart';
 import 'package:flutter/material.dart';
 import 'package:apka/screens/splash_screen.dart';
@@ -30,8 +31,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:
-      AppStart(),
+      home:FirstPage(),
+
+      //AppStart(),
     );
   }
 }

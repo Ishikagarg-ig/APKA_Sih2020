@@ -1,5 +1,6 @@
 import 'package:apka/screens/bookFlight_screen.dart';
 import 'package:apka/screens/data_table.dart';
+import 'package:apka/screens/game_page.dart';
 import 'package:apka/screens/google_signIn.dart';
 import 'package:apka/screens/rate_app.dart';
 import 'package:apka/widgets/dialogBox.dart';
@@ -406,7 +407,7 @@ class _FirstPageState extends State<FirstPage> {
                                 SizedBox(width: 15,),
                                 GestureDetector(
                                   onTap: (){
-                                    dialogBox.BookBus(context);
+                                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>game_page()));
                                   },
                                   child: Padding(
                                     padding: const EdgeInsets.only(bottom:10.0),
