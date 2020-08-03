@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "501194216871",
+    "firebase_url": "https://apka2020-8d351.firebaseio.com",
+    "project_id": "apka2020-8d351",
+    "storage_bucket": "apka2020-8d351.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501194216871:android:e01a759fb70a2c601dd282",
+        "android_client_info": {
+          "package_name": "comapp.teamvision.apka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501194216871-8q0msmh4qcafp77v1veosdq3vfnctenf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "comapp.teamvision.apka",
+            "certificate_hash": "ad4bd3fd1e2dbab8d6984a1aa04409cea960ae81"
+          }
+        },
+        {
+          "client_id": "501194216871-mg8ufa82jor0rh784hpaglltpdk6spgb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVTcQjeGvFAbnTiZKD4-aenCLC3lOCvGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501194216871-mg8ufa82jor0rh784hpaglltpdk6spgb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
