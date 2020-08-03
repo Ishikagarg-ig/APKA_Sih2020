@@ -29,7 +29,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: Column(
                         children: [
                           Image(image: AssetImage('assets/images/profile.png'),height: 90,width: 90,),
-                          Text("Ishika garg",style: TextStyle(fontSize: 23,color: Hexcolor('#050F32')),)
+                          Text("Sujeet Yadav",style: TextStyle(fontSize: 23,color: Hexcolor('#050F32')),)
                         ],
                       ),
                     ),

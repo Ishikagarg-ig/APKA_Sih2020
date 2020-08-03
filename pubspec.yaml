@@ -53,6 +53,8 @@ dependencies:
   smooth_star_rating: ^1.1.1
   charts_flutter:
   font_awesome_flutter: ^8.2.0
+  qrscan: ^0.2.17
+
 
 dev_dependencies:
   flutter_test:

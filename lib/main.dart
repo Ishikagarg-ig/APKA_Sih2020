@@ -1,7 +1,17 @@
+import 'package:apka/testing/FoodNotifier.dart';
 import 'package:flutter/material.dart';
 import 'package:apka/screens/splash_screen.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MultiProvider(
+  providers: [
+
+    ChangeNotifierProvider(
+      create: (context) => FoodNotifier(),
+    ),
+  ],
+  child: MyApp(),
+));
 
 class MyApp extends StatefulWidget {
   @override

@@ -1,8 +1,10 @@
 import 'package:apka/screens/bookFlight_screen.dart';
 import 'package:apka/screens/data_table.dart';
+import 'package:apka/screens/google_signIn.dart';
 import 'package:apka/screens/rate_app.dart';
 import 'package:apka/widgets/dialogBox.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -15,6 +17,7 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> {
+  GoogleSignIn xy=new GoogleSignIn();
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   DialogBox dialogBox = new DialogBox();
   @override
@@ -583,6 +586,7 @@ class _FirstPageState extends State<FirstPage> {
             onTap: () async {
               //SystemNavigator.pop();
               //await this.signOut();
+              gSignIn.signOut();
             },
           ),
         ]),

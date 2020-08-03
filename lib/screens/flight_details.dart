@@ -1,11 +1,15 @@
 import 'package:apka/screens/HomeAirport2_screen.dart';
+import 'package:apka/screens/home_page.dart';
 import 'package:apka/screens/weatherdetails_page.dart';
+import 'package:apka/testing/counters.dart';
+import 'package:apka/testing/scan123.dart';
 import 'package:apka/widgets/Navbar.dart';
 import 'package:apka/widgets/dialogBox.dart';
 import 'package:apka/widgets/fabCircularMenu.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -22,7 +26,19 @@ class _FlightDetailState extends State<FlightDetail> {
   FabCircularMnu fabCircularMnu = new FabCircularMnu();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  new WillPopScope(
+    onWillPop: () async {
+      Navigator.of(context).push(
+        //Navigator.pop(context);
+        MaterialPageRoute(
+          builder: (context) {
+            return Navbar();
+          },
+        ),
+      );
+    return false;
+    },
+      child:Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -287,7 +303,13 @@ class _FlightDetailState extends State<FlightDetail> {
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                     onPressed: (){
-                      dialogBox.Planning(context);
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return ChooseScreen2();
+                          },
+                        ),
+                      );
                     },
                     child: Text("Generate Boarding Pass",style: TextStyle(color: Colors.white,fontSize: 20.0,),),
                   ),
@@ -466,6 +488,7 @@ class _FlightDetailState extends State<FlightDetail> {
           ],
         ),
       ),
+    )
     );
   }
 }
